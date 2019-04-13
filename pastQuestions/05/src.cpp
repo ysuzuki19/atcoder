@@ -2,7 +2,6 @@
 using namespace std;
 
 int main(){
-  // start process
   int n, a, b;
   cin >> n >> a >> b;
   int count = 0;
@@ -19,6 +18,5 @@ int main(){
     }
   }
   cout << sum << endl;
-  // end process
   return 0;
 }

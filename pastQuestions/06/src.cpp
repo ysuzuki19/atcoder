@@ -2,7 +2,6 @@
 using namespace std;
 
 int main(){
-  // start process
   int n;
   vector<int> a(n);
   cin >> n;
@@ -17,8 +16,5 @@ int main(){
     bob += a[i+1];
   }
   cout << alice - bob << endl;
-
-
-  // end process
   return 0;
 }

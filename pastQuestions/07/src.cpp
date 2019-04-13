@@ -2,7 +2,6 @@
 using namespace std;
 
 int main(){
-  // start process
   int n;
   cin >> n;
   vector<int> d(n);
@@ -17,6 +16,5 @@ int main(){
     }
   }
   cout << count << endl;
-  // end process
   return 0;
 }

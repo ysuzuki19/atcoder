@@ -2,7 +2,6 @@
 using namespace std;
 
 int main(){
-  // start process
   int a, b, c, x;
   cin >> a >> b >> c >> x;
   int pat = 0;
@@ -30,6 +29,5 @@ int main(){
     }
   }
   cout << pat << endl;
-  // end process
   return 0;
 }

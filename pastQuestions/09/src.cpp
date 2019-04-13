@@ -4,7 +4,6 @@ using namespace std;
 string str[4] = {"maerd", "remaerd", "esare", "resare"};
 
 int main(){
-  // start process
   string s;
   cin >> s;
   reverse(s.begin(), s.end());
@@ -21,6 +20,5 @@ int main(){
     }
   }
   cout << "YES" << endl;
-  // end process
   return 0;
 }

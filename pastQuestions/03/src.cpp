@@ -2,11 +2,11 @@
 using namespace std;
 
 int main(){
-  // start process
   int n;
+  int i;
   cin >> n;
   vector<int> a(n);
-  for(int i=0; i<n; i++){
+  for(i=0; i<n; i++){
     cin >> a[i];
   }
   sort(a.begin(), a.end());
@@ -21,9 +21,8 @@ int main(){
     return 0;
   }
   int division = 1 << counter;
-  int flag = 1;
-  while(flag == 1){
-    for(int i=0; i<a.size(); i++){
+  while(1){
+    for(i=0; i<a.size(); i++){
       if(a[i]%division != 0){
         break;
       }
@@ -35,7 +34,4 @@ int main(){
     division = division >> 1;
     counter--;
   }
-
-  // end process
-  return 0;
 }

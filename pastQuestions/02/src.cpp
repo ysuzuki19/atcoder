@@ -2,7 +2,6 @@
 using namespace std;
 
 int main(){
-  // start process
   string str;
   cin >> str;
   int count;
@@ -12,6 +11,5 @@ int main(){
     }
   }
   cout << count << endl;
-  // end process
   return 0;
 }

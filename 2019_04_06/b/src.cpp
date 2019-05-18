@@ -25,7 +25,5 @@ int main(){
     sumTime -= (10 - minTemp);
     cout << sumTime << endl;
   }
-
-  // end process
   return 0;
 }

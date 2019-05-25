@@ -4,6 +4,7 @@ using namespace std;
 #define squ(x)  ((x) * (x))
 #define VAR_NAME(var)  cout << #var << " : ";
 #define debug(var)  VAR_NAME(var); view(var);
+using ll = long long;
 template <class T>
 using V = vector<T>;
 template <class T>
@@ -18,29 +19,44 @@ void view(T e){
 template<typename T>
 void view(vector<T>& v){
   for(const auto& e : v){
-    cout << setw(5)<< e << " ";
+    cout << e << " ";
   }
   cout << endl;
 }
-
 template<typename T>
 void view(const vector<vector<T>>& vv){
   for(const auto& v : vv){
     for(const auto& e : v)
-      cout << setw(5) << e << " ";
+      cout << e << " ";
     cout << endl;
   }
 }
 
 int main(){
   int i, j;
-  int R, D;
-  cin >> R >> D;
-  V<int> x(11);
-  cin >> x[0];
-  for(i=1; i<x.size(); ++i){
-    x[i] = R*x[i-1] - D;
-    cout << x[i] << endl;
+  int N, M;
+  cin >> N >> M;
+  V<int> a(N);
+  V<int> b(M);
+  V<int> c(M);
+  for(i=0; i<a.size(); ++i) cin >> a[i];
+  for(i=0; i<b.size(); ++i) cin >> b[i] >> c[i];
+  for(j=0; j<M; ++j){
+    int conv = 0;
+    if(j>=M-10)
+    sort(a.begin(), a.end());
+    for(i=0; i<N; ++i){
+      if(a[i]<c[j]){
+        a[i] = c[j];
+        conv++;
+      }
+//      cout << j _ conv _ b[j] << endl;
+      if(conv>=b[j]) break;
+    }
+//    debug(a);
   }
+  ll sums = 0;
+  for(const auto& e : a)sums += e;
+  cout << sums << endl;
   return 0;
 }

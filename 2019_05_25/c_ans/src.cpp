@@ -1,16 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define _  << ' ' <<
-#define squ(x)  ((x) * (x))
+#define _  << ' ' <<;
+#define squ(x)  ((x) * (x));
 #define VAR_NAME(var)  cout << #var << " : ";
 #define debug(var)  VAR_NAME(var); view(var);
+#define MAX(v)  *max_element(v.begin(), v.end());
+#define MIN(v)  *min_element(v.begin(), v.end());
 template <class T>
 using V = vector<T>;
 template <class T>
 using VV = vector<vector<T>>;
 template <class T>
 using VVV = vector<vector<vector<T>>>;
-//// view vector functions
 template<typename T>
 void view(T e){
   cout << e << endl;
@@ -18,29 +19,29 @@ void view(T e){
 template<typename T>
 void view(vector<T>& v){
   for(const auto& e : v){
-    cout << setw(5)<< e << " ";
+    cout << e << " ";
   }
   cout << endl;
 }
-
 template<typename T>
 void view(const vector<vector<T>>& vv){
   for(const auto& v : vv){
     for(const auto& e : v)
-      cout << setw(5) << e << " ";
+      cout << e << " ";
     cout << endl;
   }
 }
 
 int main(){
   int i, j;
-  int R, D;
-  cin >> R >> D;
-  V<int> x(11);
-  cin >> x[0];
-  for(i=1; i<x.size(); ++i){
-    x[i] = R*x[i-1] - D;
-    cout << x[i] << endl;
-  }
+  int N, M;
+  cin >> N >> M;
+  V<int> l(M);
+  V<int> r(M);
+  for(i=0; i<l.size(); ++i) cin >> l[i] >> r[i];
+  int lmax = MAX(l);
+  int rmin = MIN(r);
+  int dif = rmin - lmax;
+  cout << (dif>=0? dif+1 : 0) << endl;
   return 0;
 }

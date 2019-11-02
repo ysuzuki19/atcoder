@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 #define _ << ' ' <<
 #define _squ(x)  ((x) * (x))
-#define _var_name(var)  cout << #var << " : ";
-#define _dbg(var)  VAR_NAME(var); view(var);
+#define debug(var)  do{std::cout << #var << " : "; view(var);}while(0)
+#define line_debug(var)  do{std::cout << "l" << __LINE__ << " " << #var << " : "; view(var);}while(0)
 #define _max(v)  *max_element(v.begin(), v.end())
 #define _min(v)  *min_element(v.begin(), v.end())
 #define _sort(var)  std::sort(var.begin(), var.end());
@@ -14,8 +14,8 @@ template<typename T> using V = std::vector<T>;
 template<typename T> using VV = std::vector<std::vector<T>>;
 template<typename T> using VVV = std::vector<std::vector<std::vector<T>>>;
 template<typename T> void view(const T e){ std::cout << e << std::endl;}
-template<typename T> void view(const vector<T>& v){ for(const auto& e : v) std::cout << e << " "; std::cout << std::endl; }
-template<typename T> void view(const VV<T>& vv){ for(const auto& v : vv){ view(v); } }
+template<typename T> void view(const std::vector<T>& v){ for(const auto& e : v) std::cout << e << " "; std::cout << std::endl; }
+template<typename T> void view(const std::vector<std::vector<T>>& vv){ for(const auto& v : vv){ view(v); } }
 
 int main(){
   int i, j;

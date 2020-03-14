@@ -1,14 +1,15 @@
-PROG = src.cpp
+SOURCE = src.cpp
 TARGET = proj
-LIBRARY = /Users/suzukiyuuya/Github/atcoder/library
+MAKEFILE = makefile
 CXX = g++
 CXX_VERSION = -std=c++17
+CXX_OPTION = -O
 
-${TARGET} : ${PROG}
-	${CXX} ${CXX_VERSION} -o ${TARGET} -I${LIBRARY} ${PROG}
+${TARGET} : ${SOURCE} ${MAKEFILE}
+	${CXX} ${CXX_VERSION} ${CXX_OPTION} -o ${TARGET} ${SOURCE}
 
 run :
 	./proj
 
 clean :
-	rm -r ${TARGET}
+	rm ${TARGET}

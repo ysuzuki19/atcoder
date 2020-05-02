@@ -1,0 +1,19 @@
+This folder is answer of AtCoder past questions careful selection 10.
+
+question's url
+https://atcoder.jp/contests/abc081/tasks/abc081_a
+
+---
+
+
+【問題概要】
+
+0 と 1 のみから成る 3 桁の番号 s が与えられます。1 が何個含まれるかを求めてください。
+
+【数値例】
+1)
+　s = "101"
+　答え: 2
+'1' が 2 個含まれています。
+
+

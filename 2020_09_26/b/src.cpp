@@ -26,11 +26,12 @@ template<typename T> void view(std::vector<std::vector<T>> vv) noexcept { for(co
 int main(){
 	cin.tie(0);
 	ios::sync_with_stdio(false);
-	int a;
-	cin >> a;
-	for (int i=0; i<a; ++i) {
-		std::cout << "ACL";
+	long a, b, c, d;
+	cin >> a >> b >> c >> d;
+	if (b<c || d<a) {
+		std::cout << "No" << std::endl;
+		return 0;
 	}
-	std::cout << endl;
+	std::cout << "Yes" << endl;
 	return 0;
 }

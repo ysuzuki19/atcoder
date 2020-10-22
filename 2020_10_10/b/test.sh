@@ -5,12 +5,15 @@ make
 
 PRE_IFS=$IFS
 IFS=$'\n'
-# Put data {input output}
-input0="3"
-output0="ACLACLACL"
 
-inputs=(  ${input0})
-outputs=(${output0})
+# Put data {input output}
+input0="2 3\n..#\n#.."
+output0="3"
+input1="2 2\n.#\n#."
+output1="0"
+
+inputs=(  ${input0}  ${input1} )
+outputs=(${output0} ${output1} )
 
 echo $#
 

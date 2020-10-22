@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
 using namespace std;
 
 #define debug(var)  do{ std::cout << #var << " : "; view(var); }while(0)
@@ -26,11 +27,12 @@ template<typename T> void view(std::vector<std::vector<T>> vv) noexcept { for(co
 int main(){
 	cin.tie(0);
 	ios::sync_with_stdio(false);
-	int a;
-	cin >> a;
-	for (int i=0; i<a; ++i) {
-		std::cout << "ACL";
-	}
-	std::cout << endl;
+
+	int a, b;
+	cin >> a >> b;
+
+	cout << (a+b) * 0.5 << " ";
+	cout << (a-b) * 0.5 << endl;
+
 	return 0;
 }

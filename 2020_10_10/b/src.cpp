@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
+#include <algorithm>
 using namespace std;
 
 #define debug(var)  do{ std::cout << #var << " : "; view(var); }while(0)
@@ -26,11 +28,38 @@ template<typename T> void view(std::vector<std::vector<T>> vv) noexcept { for(co
 int main(){
 	cin.tie(0);
 	ios::sync_with_stdio(false);
-	int a;
-	cin >> a;
-	for (int i=0; i<a; ++i) {
-		std::cout << "ACL";
+
+	int h, w;
+	cin >> h >> w;
+
+	vector<vector<bool>> room (h, vector<bool> (w, false));
+	for (int i=0; i<h; ++i) {
+		for (int j=0; j<w; ++j) {
+			char c;
+			cin >> c;
+			if (c == '.') {
+				room[i][j] = true;
+			}
+		}
 	}
-	std::cout << endl;
+
+	int pattern = 0;
+
+	for (int i=0; i<h; ++i) {
+		for (int j=0; j<w-1; ++j) {
+			if (room[i][j] && room[i][j+1]) {
+				pattern ++;
+			}
+		}
+	}
+	for (int i=0; i<h-1; ++i) {
+		for (int j=0; j<w; ++j) {
+			if (room[i][j] && room[i+1][j]) {
+				pattern ++;
+			}
+		}
+	}
+	cout << pattern << endl;
+
 	return 0;
 }

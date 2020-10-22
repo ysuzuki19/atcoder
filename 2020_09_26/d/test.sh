@@ -6,11 +6,11 @@ make
 PRE_IFS=$IFS
 IFS=$'\n'
 # Put data {input output}
-input0="3"
-output0="ACLACLACL"
+input0="10 3\n1\n5\n4\n3\n8\n6\n9\n7\n2\n4"
+output0="7"
 
-inputs=(  ${input0})
-outputs=(${output0})
+inputs=(  ${input0} )
+outputs=(${output0} )
 
 echo $#
 

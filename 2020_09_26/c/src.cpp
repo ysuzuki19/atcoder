@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
 using namespace std;
 
 #define debug(var)  do{ std::cout << #var << " : "; view(var); }while(0)
@@ -23,14 +24,52 @@ template<typename T> void view(T e) noexcept { cout << e; }
 template<typename T> void view(std::vector<T> v) noexcept { for(const auto& e : v) cout << e << " "; }
 template<typename T> void view(std::vector<std::vector<T>> vv) noexcept { for(const auto& v : vv) view(v); }
 
+struct UnionFind {
+	vector<int> par;
+
+	UnionFind(int N) : par(N) {
+		for(int i = 0; i < N; i++) par[i] = i;
+	}
+
+	int root(int x) {
+		if (par[x] == x) return x;
+		return par[x] = root(par[x]);
+	}
+
+	void unite(int x, int y) {
+		int rx = root(x);
+		int ry = root(y);
+		if (rx == ry) return;
+		par[rx] = ry;
+	}
+
+	bool same(int x, int y) {
+		int rx = root(x);
+		int ry = root(y);
+		return rx == ry;
+	}
+
+};
+
 int main(){
 	cin.tie(0);
 	ios::sync_with_stdio(false);
-	int a;
-	cin >> a;
-	for (int i=0; i<a; ++i) {
-		std::cout << "ACL";
+
+	int n, m;
+	cin >> n >> m;
+
+	UnionFind uf(n+1);
+	for (int i=0; i<m; ++i) {
+		int a, b;
+		cin >> a >> b;
+		uf.unite(a, b);
 	}
-	std::cout << endl;
+	std::set<int> roots;
+	for (int i=1; i<n+1; ++i) {
+		roots.insert( uf.root(i) );
+	}
+
+	cout << roots.size()-1 << endl;
+
 	return 0;
 }

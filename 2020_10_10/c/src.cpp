@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
+#include <map>
+#include <algorithm>
 using namespace std;
 
 #define debug(var)  do{ std::cout << #var << " : "; view(var); }while(0)
@@ -20,17 +23,31 @@ template<typename T> inline bool isZero(T num) noexcept { return (num==0? true :
 template<typename T> inline bool isPositive(T num) noexcept { return (num>0? true : false); }
 template<typename T> inline bool isNegative(T num) noexcept { return (num<0? true : false); }
 template<typename T> void view(T e) noexcept { cout << e; }
-template<typename T> void view(std::vector<T> v) noexcept { for(const auto& e : v) cout << e << " "; }
+template<typename T> void view(std::vector<T> v) noexcept { for(const auto& e : v) cout << e << " "; cout << endl; }
 template<typename T> void view(std::vector<std::vector<T>> vv) noexcept { for(const auto& v : vv) view(v); }
 
 int main(){
 	cin.tie(0);
 	ios::sync_with_stdio(false);
-	int a;
-	cin >> a;
-	for (int i=0; i<a; ++i) {
-		std::cout << "ACL";
+
+	int n;
+	cin >> n;
+	vector<int> P(n);
+	for (auto& p : P) cin >> p;
+
+	array<bool, 200001> dic {{ false }};
+
+	size_t minimum_start = 0;
+	for (const auto& p : P) {
+		dic[p] = true;
+		for (size_t minimum=minimum_start; minimum<dic.size(); ++minimum) {
+			if (!dic[minimum]) {
+				cout << minimum << endl;
+				minimum_start = minimum;
+				break;
+			}
+		}
 	}
-	std::cout << endl;
+
 	return 0;
 }
